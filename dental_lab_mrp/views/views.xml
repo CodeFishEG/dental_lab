@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- Sales Order Teath Check Boxces -->
+<!--
+    <record model="ir.ui.view" id="dental_lab.list">
+      <field name="name">dental_lab list</field>
+      <field name="model">dental_lab.dental_lab</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="dental_lab.action_window">
+      <field name="name">dental_lab window</field>
+      <field name="res_model">dental_lab.dental_lab</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="dental_lab.action_server">
+      <field name="name">dental_lab server</field>
+      <field name="model_id" ref="model_dental_lab_dental_lab"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="dental_lab" id="dental_lab.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="dental_lab.menu_1" parent="dental_lab.menu_root"/>
+    <menuitem name="Menu 2" id="dental_lab.menu_2" parent="dental_lab.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="dental_lab.menu_1_list" parent="dental_lab.menu_1"
+              action="dental_lab.action_window"/>
+    <menuitem name="Server to list" id="dental_lab" parent="dental_lab.menu_2"
+              action="dental_lab.action_server"/>
+    -->
+  </data>
+</odoo>

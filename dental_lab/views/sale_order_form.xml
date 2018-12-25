@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <field name="partner_id" position="after">
+					<field name="patient_name"/>
+				</field>
+
+				<field name="order_line" position="attributes">
+                    <attribute name="mode">kanban</attribute>
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done','cancel'))]}</attribute>
+                </field>
+
+	            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/form/group" position="before">
+            	    <table style="width: 100%; margin-left: auto; margin-right: auto;" dir="rtl" frame="box">
+						<tbody>
+							<tr>
+					    		<td style="width: 36px; text-align: center;"><strong>8</strong></td>
+						    	<td style="width: 36px; text-align: center;"><strong>7</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>6</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>5</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>4</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>3</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>2</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>1</strong></td>
+								<td style="width: 29px; text-align: center;">|</td>
+								<td style="width: 36px; text-align: center;"><strong>1</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>2</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>3</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>4</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>5</strong></td>
+							    <td style="width: 36px; text-align: center;"><strong>6</strong></td>
+								<td style="width: 37px; text-align: center;"><strong>7</strong></td>
+								<td style="width: 37px; text-align: center;"><strong>8</strong></td>
+                            </tr>
+							<tr>
+							    <td style="width: 36px; text-align: center;"><field name="ul8"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul7"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul6"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul5"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul4"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul3"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul2"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul1"/></td>
+								<td style="width: 29px; text-align: center;">|</td>
+								<td style="width: 36px; text-align: center;"><field name="ur1"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur2"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur3"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur4"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur5"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur6"/></td>
+								<td style="width: 37px; text-align: center;"><field name="ur7"/></td>
+								<td style="width: 37px; text-align: center;"><field name="ur8"/></td>
+                            </tr>
+							<tr>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 29px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 37px; text-align: center;"><hr /></td>
+                                <td style="width: 37px; text-align: center;"><hr /></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 36px; text-align: center;"><field name="ll8"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll7"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll6"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll5"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll4"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll3"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll2"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll1"/></td>
+                                <td style="width: 29px; text-align: center;">|</td>
+                                <td style="width: 36px; text-align: center;"><field name="lr1"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr2"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr3"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr4"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr5"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr6"/></td>
+                                <td style="width: 37px; text-align: center;"><field name="lr7"/></td>
+                                <td style="width: 37px; text-align: center;"><field name="lr8"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 36px; text-align: center;"><strong>8</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>7</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>6</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>5</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>4</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>3</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>2</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>1</strong></td>
+                                <td style="width: 29px; text-align: center;">|</td>
+                                <td style="width: 36px; text-align: center;"><strong>1</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>2</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>3</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>4</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>5</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>6</strong></td>
+                                <td style="width: 37px; text-align: center;"><strong>7</strong></td>
+                                <td style="width: 37px; text-align: center;"><strong>8</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </xpath>
+
+                <xpath
+                        expr="/form/sheet/notebook/page/field[@name='order_line']/form/group/group/field[@name='product_id']"
+                       position="before">
+                    <field name="color"/>
+                    <field name="allt"/>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/kanban" position="replace">
+                    <kanban>
+						<field name="ul1" invisible="1"/>
+						<field name="ul2" invisible="1"/>
+						<field name="ul3" invisible="1"/>
+						<field name="ul4" invisible="1"/>
+						<field name="ul5" invisible="1"/>
+						<field name="ul6" invisible="1"/>
+						<field name="ul7" invisible="1"/>
+						<field name="ul8" invisible="1"/>
+						<field name="ur1" invisible="1"/>
+						<field name="ur2" invisible="1"/>
+						<field name="ur3" invisible="1"/>
+						<field name="ur4" invisible="1"/>
+						<field name="ur5" invisible="1"/>
+						<field name="ur6" invisible="1"/>
+						<field name="ur7" invisible="1"/>
+						<field name="ur8" invisible="1"/>
+						<field name="ll1" invisible="1"/>
+						<field name="ll2" invisible="1"/>
+						<field name="ll3" invisible="1"/>
+						<field name="ll4" invisible="1"/>
+						<field name="ll5" invisible="1"/>
+						<field name="ll6" invisible="1"/>
+						<field name="ll7" invisible="1"/>
+						<field name="ll8" invisible="1"/>
+						<field name="lr1" invisible="1"/>
+						<field name="lr2" invisible="1"/>
+						<field name="lr3" invisible="1"/>
+						<field name="lr4" invisible="1"/>
+						<field name="lr5" invisible="1"/>
+						<field name="lr6" invisible="1"/>
+						<field name="lr7" invisible="1"/>
+						<field name="lr8" invisible="1"/>
+						<field name="allt" invisible="1"/>
+						<field name="product_id"/>
+						<field name="name"/>
+						<field name="product_uom_qty"/>
+						<field name="product_uom" groups="product.group_uom"/>
+						<field name="price_subtotal"/>
+						<field name="color"/>
+						<templates>
+							<t t-name="kanban-box">
+								<div t-attf-class="oe_kanban_card oe_kanban_global_click">
+									<a type="delete" class="fa fa-times pull-right"/>
+									<div class="row">
+										<div class="col-xs-12">
+											<strong>
+												<span>
+													<t t-esc="record.name.value"/>
+												</span>
+											</strong>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<strong>
+												<span>
+													<t t-esc="record.color.value"/>
+												</span>
+											</strong>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<table style="width: 100%;" dir="rtl" frame="box">
+												<tbody>
+													<tr>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul8.string"  attrs="{'invisible':[('ul8', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul7.string"  attrs="{'invisible':[('ul7', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul6.string"  attrs="{'invisible':[('ul6', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul5.string"  attrs="{'invisible':[('ul5', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul4.string"  attrs="{'invisible':[('ul4', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul3.string"  attrs="{'invisible':[('ul3', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul2.string"  attrs="{'invisible':[('ul2', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ul1.string"  attrs="{'invisible':[('ul1', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 29px; text-align: center;">|</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur1.string"  attrs="{'invisible':[('ur1', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur2.string"  attrs="{'invisible':[('ur2', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur3.string"  attrs="{'invisible':[('ur3', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur4.string"  attrs="{'invisible':[('ur4', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur5.string"  attrs="{'invisible':[('ur5', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur6.string"  attrs="{'invisible':[('ur6', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 37px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur7.string"  attrs="{'invisible':[('ur7', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 37px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ur8.string"  attrs="{'invisible':[('ur8', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+													</tr>
+													<tr>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 29px; text-align: center;">|</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 37px; text-align: center;">
+															<hr />
+														</td>
+														<td style="width: 37px; text-align: center;">
+															<hr />
+														</td>
+													</tr>
+													<tr>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll8.string"  attrs="{'invisible':[('ll8', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll7.string"  attrs="{'invisible':[('ll7', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll6.string"  attrs="{'invisible':[('ll6', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll5.string"  attrs="{'invisible':[('ll5', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll4.string"  attrs="{'invisible':[('ll4', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll3.string"  attrs="{'invisible':[('ll3', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll2.string"  attrs="{'invisible':[('ll2', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.ll1.string"  attrs="{'invisible':[('ll1', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 29px; text-align: center;">|</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr1.string"  attrs="{'invisible':[('lr1', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr2.string"  attrs="{'invisible':[('lr2', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr3.string"  attrs="{'invisible':[('lr3', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr4.string"  attrs="{'invisible':[('lr4', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr5.string"  attrs="{'invisible':[('lr5', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 36px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr6.string"  attrs="{'invisible':[('lr6', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 37px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr7.string"  attrs="{'invisible':[('lr7', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+														<td style="width: 37px; text-align: center;">
+															<strong>
+																<span>
+																	<t t-esc="record.lr8.string"  attrs="{'invisible':[('lr8', '!=', True)]}"/>
+																</span>
+															</strong>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-8 text-muted">
+											<span>
+												<t t-esc="record.product_uom_qty.value"/>
+												<t t-esc="record.product_uom.value"/>
+												<t t-esc="record.allt.string" attrs="{'invisible':[('allt', '!=', True)]}"/>
+											</span>
+										</div>
+										<div class="col-xs-4 text-muted">
+											<span class="pull-right text-right">
+												<t t-esc="record.price_subtotal.value"/>
+											</span>
+										</div>
+									</div>
+								</div>
+							</t>
+						</templates>
+					</kanban>
+                </xpath>
+
+			</field>
+        </record>
+
+		<template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
+				<xpath expr="//div[@class='page']/h2" position="after">
+					<h5>
+						<strong>Patient Name:</strong>
+						<span t-field="doc.patient_name"/>
+					</h5>
+				</xpath>
+
+				<xpath expr="//div[@class='page']/t[2]/table[1]" position="attributes">
+						<attribute name="class">table table-bordered</attribute>
+
+				</xpath>
+				<xpath
+						expr="//div[@class='page']/t[2]/table[1]/thead/tr/th[2]"
+					   position="after">
+						<th class="text-center">Color</th>
+						<th class="text-center">Case</th>
+				</xpath>
+
+				<xpath
+						expr="//div[@class='page']/t[2]/table[1]/tbody/t/t/tr/td[2]"
+					   position="after">
+						<td>
+							<span t-field="l.color"/>
+						</td>
+						<td>
+							<table style="width: 90%; margin-left: auto; margin-right: auto;" dir="rtl" frame="box">
+											<tbody>
+
+												<tr>
+
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 8, False: False}[l.ul8]" attrs="{'invisible':[('ul8', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 7, False: False}[l.ul7]" attrs="{'invisible':[('ul7', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 6, False: False}[l.ul6]" attrs="{'invisible':[('ul6', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 5, False: False}[l.ul5]"  attrs="{'invisible':[('ul5', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 4, False: False}[l.ul4]"  attrs="{'invisible':[('ul4', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 3, False: False}[l.ul3]"  attrs="{'invisible':[('ul3', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 2, False: False}[l.ul2]"  attrs="{'invisible':[('ul2', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<t t-esc="{True: 1, False: False}[l.ul1]"  attrs="{'invisible':[('ul1', '!=', True)]}"/>
+														</strong>
+													</td>
+													<td style="width: 29px; text-align: center;">|</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 1, False: False}[l.ur1]"  attrs="{'invisible':[('ur1', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 2, False: False}[l.ur2]"  attrs="{'invisible':[('ur2', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 3, False: False}[l.ur3]"  attrs="{'invisible':[('ur3', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 4, False: False}[l.ur4]"  attrs="{'invisible':[('ur4', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 5, False: False}[l.ur5]"  attrs="{'invisible':[('ur5', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 6, False: False}[l.ur6]"  attrs="{'invisible':[('ur6', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 37px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 7, False: False}[l.ur7]"  attrs="{'invisible':[('ur7', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 37px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 8, False: False}[l.ur8]"  attrs="{'invisible':[('ur8', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+
+												</tr>
+												<tr>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 37px; text-align: center;">
+														<hr />
+													</td>
+													<td style="width: 37px; text-align: center;">
+														<hr />
+													</td>
+												</tr>
+												<tr>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 8, False: False}[l.ll8]"  attrs="{'invisible':[('ll8', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 7, False: False}[l.ll7]"  attrs="{'invisible':[('ll7', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 6, False: False}[l.ll6]"  attrs="{'invisible':[('ll6', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 5, False: False}[l.ll5]"  attrs="{'invisible':[('ll5', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 4, False: False}[l.ll4]"  attrs="{'invisible':[('ll4', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 3, False: False}[l.ll3]"  attrs="{'invisible':[('ll3', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 2, False: False}[l.ll2]"  attrs="{'invisible':[('ll2', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 1, False: False}[l.ll1]"  attrs="{'invisible':[('ll1', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 29px; text-align: center;">|</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 1, False: False}[l.lr1]"  attrs="{'invisible':[('lr1', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 2, False: False}[l.lr2]"  attrs="{'invisible':[('lr2', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 3, False: False}[l.lr3]"  attrs="{'invisible':[('lr3', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 4, False: False}[l.lr4]"  attrs="{'invisible':[('lr4', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 5, False: False}[l.lr5]"  attrs="{'invisible':[('lr5', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 36px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 6, False: False}[l.lr6]"  attrs="{'invisible':[('lr6', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 37px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 7, False: False}[l.lr7]"  attrs="{'invisible':[('lr7', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+													<td style="width: 37px; text-align: center;">
+														<strong>
+															<span>
+																<t t-esc="{True: 8, False: False}[l.lr8]"  attrs="{'invisible':[('lr8', '!=', True)]}"/>
+															</span>
+														</strong>
+													</td>
+												</tr>
+
+
+											</tbody>
+										</table>
+						</td>
+				</xpath>
+		</template>
+
+		<record id="view_quotation_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="patient_name"/>
+				</field>
+			</field>
+		</record>
+
+		<record id="view_sales_order_filter" model="ir.ui.view">
+            <field name="name">sale.order.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="patient_name"/>
+				</field>
+			</field>
+		</record>
+
+    </data>
+</odoo>

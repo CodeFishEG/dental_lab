@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* dental_lab
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0-20180704\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-07 19:53+0000\n"
+"PO-Revision-Date: 2018-07-07 19:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_code
+msgid "Code"
+msgstr "الكود"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_color
+msgid "Color"
+msgstr "اللون"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_name
+msgid "Color Name"
+msgstr "اللون"
+
+#. module: dental_lab
+#: model:ir.ui.menu,name:dental_lab.menu_action_colors_form
+#: model:ir.ui.view,arch_db:dental_lab.colors_form_view
+#: model:ir.ui.view,arch_db:dental_lab.colors_tree_view
+msgid "Colors"
+msgstr "الألوان"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_colors_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_patient_name
+msgid "Patient Name"
+msgstr "إسم المريض"
+
+#. module: dental_lab
+#: model:ir.model,name:dental_lab.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: dental_lab
+#: model:ir.model,name:dental_lab.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "سطر أمر البيع"
+
+#. module: dental_lab
+#: model:ir.actions.act_window,name:dental_lab.action_colors_form_view
+#: model:ir.model,name:dental_lab.model_colors
+msgid "colors"
+msgstr "الألوان"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_allt
+msgid "case"
+msgstr "حالة"

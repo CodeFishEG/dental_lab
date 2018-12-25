@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- TODO: put here a reminder on what to do at the first edition -->
+    <record id="colors_tree_view" model="ir.ui.view">
+        <field name="name">colors.tree.view</field>
+        <field name="model">colors</field>
+        <field name="view_type">tree</field>
+        <field name="inherit_id" ref=""/>
+        <field name="arch" type="xml">
+            <tree string="Colors">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="colors_form_view" model="ir.ui.view">
+        <field name="name">colors.view.view</field>
+        <field name="model">colors</field>
+        <field name="view_type">form</field>
+        <field name="inherit_id" ref=""/>
+        <field name="arch" type="xml">
+            <form string="Colors">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_colors_form_view" model="ir.actions.act_window">
+        <field name="name">colors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">colors</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_colors_form_view"
+              name="Colors"
+              id="menu_action_colors_form"
+              parent="sales_team.menu_base_partner"
+              sequence="10"
+              groups=""
+    />
+</odoo>

@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="mrp_production_form_view" model="ir.ui.view">
+            <field name="name">mrp.production.form</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="groups_id" eval="[ (4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="arch" type="xml">
+
+                <field name="origin" position="after">
+                    <field name="sale_order_id"/>
+                    <field name="sale_order_line_id"/>
+                    <field name="mrp_department"/>
+					<field name="partner_id"/>
+					<field name="patient_name" readonly="1"/>
+                </field>
+
+				<xpath expr="/form/sheet/group/group" position="replace">
+					<group>
+						<table style="width: 80%; margin-left: auto; margin-right: auto; text-align: right;" dir="rtl" frame="box">
+							<tbody style="width: 90%; text-align: center;">
+								<tr>
+									<td style="width: 36px; text-align: center;" ><strong attrs="{'invisible':[('ul8', '!=', True)]}">8</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul1', '!=', True)]}">1</strong></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur1', '!=', True)]}">1</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur8', '!=', True)]}">8</strong></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><field name="ul8" readonly="1" attrs="{'invisible':[('ul8', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul7" readonly="1" attrs="{'invisible':[('ul7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul6" readonly="1" attrs="{'invisible':[('ul6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul5" readonly="1" attrs="{'invisible':[('ul5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul4" readonly="1" attrs="{'invisible':[('ul4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul3" readonly="1" attrs="{'invisible':[('ul3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul2" readonly="1" attrs="{'invisible':[('ul2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul1" readonly="1" attrs="{'invisible':[('ul1', '!=', True)]}"/></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><field name="ur1" readonly="1" attrs="{'invisible':[('ur1', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur2" readonly="1" attrs="{'invisible':[('ur2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur3" readonly="1" attrs="{'invisible':[('ur3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur4" readonly="1" attrs="{'invisible':[('ur4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur5" readonly="1" attrs="{'invisible':[('ur5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur6" readonly="1" attrs="{'invisible':[('ur6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur7" readonly="1" attrs="{'invisible':[('ur7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur8" readonly="1" attrs="{'invisible':[('ur8', '!=', True)]}"/></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 29px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><field name="ll8" readonly="1" attrs="{'invisible':[('ll8', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll7" readonly="1" attrs="{'invisible':[('ll7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll6" readonly="1" attrs="{'invisible':[('ll6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll5" readonly="1" attrs="{'invisible':[('ll5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll4" readonly="1" attrs="{'invisible':[('ll4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll3" readonly="1" attrs="{'invisible':[('ll3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll2" readonly="1" attrs="{'invisible':[('ll2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll1" readonly="1" attrs="{'invisible':[('ll1', '!=', True)]}"/></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><field name="lr1" readonly="1" attrs="{'invisible':[('lr1', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr2" readonly="1" attrs="{'invisible':[('lr2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr3" readonly="1" attrs="{'invisible':[('lr3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr4" readonly="1" attrs="{'invisible':[('lr4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr5" readonly="1" attrs="{'invisible':[('lr5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr6" readonly="1" attrs="{'invisible':[('lr6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr7" readonly="1" attrs="{'invisible':[('lr7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr8" readonly="1" attrs="{'invisible':[('lr8', '!=', True)]}"/></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll8', '!=', True)]}">8</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll1', '!=', True)]}">1</strong></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr1', '!=', True)]}">1</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr8', '!=', True)]}">8</strong></td>
+								</tr>
+							</tbody>
+						</table>
+						<group>
+							<field name="color" readonly="1"/>
+							<field name="allt" readonly="1"/>
+                            <field name="has_moves" invisible="1"/>
+                            <field name="check_to_done" invisible="1"/>
+                            <field name="product_id" attrs="{'readonly': [('has_moves', '=', True)]}" domain="[('bom_ids', '!=', False)]"/>
+                            <field name="product_tmpl_id" invisible="1"/>
+                            <label for="product_qty"/>
+                            <div class="o_row">
+                                <field name="product_qty" attrs="{'readonly': [('has_moves', '=', True)]}"/>
+                                <field name="product_uom_id" options="{'no_open':True,'no_create':True}" groups="product.group_uom" attrs="{'readonly': [('has_moves', '=', True)]}"/>
+                                <button type="action" name="487" string="Update" states="confirmed,planned,progress" class="oe_link" invisible="1"/>
+                            </div>
+                            <field name="bom_id"
+								   domain="['&amp;', '|',('product_id','=',product_id), '&amp;', ('product_tmpl_id.product_variant_ids','=',product_id), ('product_id','=',False), ('type', '=', 'normal')]" context="{'default_product_tmpl_id': product_tmpl_id}" required="1" attrs="{'readonly': [('has_moves', '=', True)]}"/>
+                            <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                        </group>
+					</group>
+				</xpath>
+
+			</field>
+        </record>
+
+		<record id="view_order_form" model="ir.ui.view">
+			<field name="name">sale.order.form</field>
+			<field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+		                <xpath
+                        expr="/form/sheet/notebook/page/field[@name='order_line']/form/group/group/field[@name='product_id']"
+                       position="after">
+                    <field name="mrp_department"/>
+                    <field name="production_employee"/>
+                </xpath>
+			</field>
+		</record>
+
+		<record id="product_template_form_view" model="ir.ui.view">
+			<field name="name">product.template.common.form</field>
+			<field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+		            <field name="type" position="after">
+						<field name="mrp_department"/>
+					</field>
+			</field>
+		</record>
+
+		<record id="mrp_production_workcenter_form_view_inherit" model="ir.ui.view">
+			<field name="name">mrp.production.work.order.form</field>
+			<field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workcenter_form_view_inherit"/>
+            <field name="arch" type="xml">
+		        <field name="product_id" position="before">
+					<field name="partner_id"/>
+					<field name="patient_name" readonly="1"/>
+
+				</field>
+				<field name="is_produced" position="after">
+					<field name="user_id"/>
+					<field name="color" readonly="1"/>
+					<field name="allt" readonly="1"/>
+				</field>
+					<xpath expr="/form/sheet/group[1]/div[1]" position="after">
+						<group>
+							<table style="width: 80%; margin-left: auto; margin-right: auto; text-align: right;" dir="rtl" frame="box">
+							<tbody style="width: 90%; text-align: center;">
+								<tr>
+									<td style="width: 36px; text-align: center;" ><strong attrs="{'invisible':[('ul8', '!=', True)]}">8</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ul1', '!=', True)]}">1</strong></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur1', '!=', True)]}">1</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ur8', '!=', True)]}">8</strong></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><field name="ul8" readonly="1" attrs="{'invisible':[('ul8', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul7" readonly="1" attrs="{'invisible':[('ul7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul6" readonly="1" attrs="{'invisible':[('ul6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul5" readonly="1" attrs="{'invisible':[('ul5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul4" readonly="1" attrs="{'invisible':[('ul4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul3" readonly="1" attrs="{'invisible':[('ul3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul2" readonly="1" attrs="{'invisible':[('ul2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ul1" readonly="1" attrs="{'invisible':[('ul1', '!=', True)]}"/></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><field name="ur1" readonly="1" attrs="{'invisible':[('ur1', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur2" readonly="1" attrs="{'invisible':[('ur2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur3" readonly="1" attrs="{'invisible':[('ur3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur4" readonly="1" attrs="{'invisible':[('ur4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur5" readonly="1" attrs="{'invisible':[('ur5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur6" readonly="1" attrs="{'invisible':[('ur6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur7" readonly="1" attrs="{'invisible':[('ur7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ur8" readonly="1" attrs="{'invisible':[('ur8', '!=', True)]}"/></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 29px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+									<td style="width: 36px; text-align: center;"><hr /></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><field name="ll8" readonly="1" attrs="{'invisible':[('ll8', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll7" readonly="1" attrs="{'invisible':[('ll7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll6" readonly="1" attrs="{'invisible':[('ll6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll5" readonly="1" attrs="{'invisible':[('ll5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll4" readonly="1" attrs="{'invisible':[('ll4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll3" readonly="1" attrs="{'invisible':[('ll3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll2" readonly="1" attrs="{'invisible':[('ll2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="ll1" readonly="1" attrs="{'invisible':[('ll1', '!=', True)]}"/></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><field name="lr1" readonly="1" attrs="{'invisible':[('lr1', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr2" readonly="1" attrs="{'invisible':[('lr2', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr3" readonly="1" attrs="{'invisible':[('lr3', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr4" readonly="1" attrs="{'invisible':[('lr4', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr5" readonly="1" attrs="{'invisible':[('lr5', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr6" readonly="1" attrs="{'invisible':[('lr6', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr7" readonly="1" attrs="{'invisible':[('lr7', '!=', True)]}"/></td>
+									<td style="width: 36px; text-align: center;"><field name="lr8" readonly="1" attrs="{'invisible':[('lr8', '!=', True)]}"/></td>
+								</tr>
+								<tr>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll8', '!=', True)]}">8</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('ll1', '!=', True)]}">1</strong></td>
+									<td style="width: 29px; text-align: center;">|</td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr1', '!=', True)]}">1</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr2', '!=', True)]}">2</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr3', '!=', True)]}">3</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr4', '!=', True)]}">4</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr5', '!=', True)]}">5</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr6', '!=', True)]}">6</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr7', '!=', True)]}">7</strong></td>
+									<td style="width: 36px; text-align: center;"><strong attrs="{'invisible':[('lr8', '!=', True)]}">8</strong></td>
+								</tr>
+							</tbody>
+						</table>
+						</group>
+					</xpath>
+
+			</field>
+		</record>
+
+		<record id="view_order_form" model="ir.ui.view">
+			<field name="name">sale.order.form</field>
+			<field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="/form/sheet/notebook/page[1]" position="after">
+					<page string="Manufacturing Orders">
+						<group>
+							<field name="production_id">
+								<tree create="false" delete="false">
+									<field name="name"/>
+									<field name="product_id"/>
+									<field name="product_qty"/>
+									<field name="state"/>
+								</tree>
+							</field>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+    </data>
+</odoo>
