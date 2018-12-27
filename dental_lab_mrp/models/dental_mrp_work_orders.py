@@ -15,7 +15,7 @@ class MrpWorkOrders(models.Model):
                                          related='production_id.sale_order_line_id',
                                          store=True, translate=True)
     color = fields.Many2one('colors', related='production_id.color', string="Color")
-    allt = fields.Boolean('case', related='production_id.allt')
+    allt = fields.Selection('case', related='production_id.allt')
     user_id = fields.Many2one('res.users', string="Responsible", related='production_id.user_id')
     partner_id = fields.Many2one('res.partner', string="Customer", related='production_id.partner_id')
     patient_name = fields.Char('Patient Name', related='production_id.patient_name', store=True)

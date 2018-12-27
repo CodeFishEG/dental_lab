@@ -3,7 +3,7 @@
 #  Copyright 2018 CodeFish
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 
 
 class MrpProductionDepartments(models.Model):
@@ -26,4 +26,3 @@ class SaleOrderLine(models.Model):
 
     mrp_department = fields.Many2one('hr.department', string="Production Department",
                                      related='product_id.mrp_department')
-    production_employee = fields.Many2one('res.users', string="Production Employee")

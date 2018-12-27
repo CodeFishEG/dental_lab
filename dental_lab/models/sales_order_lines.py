@@ -3,11 +3,23 @@
 #  Copyright 2018 CodeFish
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 class SaleOrderLine(models.Model):
     _name = 'sale.order.line'
     _inherit = 'sale.order.line'
+
+    CASE_TYPE = [
+        ('normal', 'Normal'),
+        ('full', 'Full Case'),
+        ('half', 'Half a Case')
+    ]
+
+    CASE_STATUS = [
+        ('new', 'New'),
+        ('rest', 'Restoration'),
+        ('rep', 'Repair')
+    ]
 
     # Upper Left Fields
     ul1 = fields.Boolean('1')
@@ -47,22 +59,31 @@ class SaleOrderLine(models.Model):
     lr8 = fields.Boolean('8')
 
     #All
-    allt = fields.Boolean('case')
+    allt = fields.Selection(CASE_TYPE, string='Case Type', required=True)
 
     # Colors Model Fields
     color = fields.Many2one('colors', string='Color', required=True)
 
+    # Case Statues
+    case_statues = fields.Selection(CASE_STATUS, string='Case Statues', required=True)
+
     # Modify Base Fields
     product_uom_qty = fields.Integer(compute='_value_pc', string='Quantity')
 
+    production_employee = fields.Many2one('res.users', string="Production Employee")
+
+
+
     # Api to sum tooth boolean checkboxes values
     @api.multi
+    @api.onchange('allt')
     @api.depends(
-        'ul1', 'ul2', 'ul3', 'ul4', 'ul5', 'ul6', 'ul7', 'ul8', 'ur1', 'ur2', 'ur3', 'ur4', 'ur5', 'ur6', 'ur7', 'ur8', 'll1', 'll2', 'll3', 'll4', 'll5', 'll6', 'll7', 'll8', 'lr1', 'lr2', 'lr3', 'lr4', 'lr5', 'lr6', 'lr7', 'lr8', 'allt'
+      'ul1', 'ul2', 'ul3', 'ul4', 'ul5', 'ul6', 'ul7', 'ul8', 'ur1', 'ur2', 'ur3', 'ur4', 'ur5', 'ur6', 'ur7', 'ur8', 'll1', 'll2', 'll3', 'll4', 'll5', 'll6', 'll7', 'll8', 'lr1', 'lr2', 'lr3', 'lr4', 'lr5', 'lr6', 'lr7', 'lr8', 'allt', 'price_subtotal', 'price_unit'
     )
     def _value_pc(self):
-        for line in self:
-            if line.allt == 1:
-                line.product_uom_qty = 1
+       for line in self:
+            if line.allt == 'normal':
+                line.product_uom_qty = line.ul1 + line.ul2 + line.ul3 + line.ul4 + line.ul5 + line.ul6 + line.ul7 + line.ul8 + line.ur1 + line.ur2 + line.ur3 + line.ur4 + line.ur5 + line.ur6 + line.ur7 + line.ur8 + line.ll1 + line.ll2 + line.ll3 + line.ll4 + line.ll5 + line.ll6 + line.ll7 + line.ll8 + line.lr1 + line.lr2 + line.lr3 + line.lr4 + line.lr5 + line.lr6 + line.lr7 + line.lr8
             else:
                 line.product_uom_qty = line.ul1 + line.ul2 + line.ul3 + line.ul4 + line.ul5 + line.ul6 + line.ul7 + line.ul8 + line.ur1 + line.ur2 + line.ur3 + line.ur4 + line.ur5 + line.ur6 + line.ur7 + line.ur8 + line.ll1 + line.ll2 + line.ll3 + line.ll4 + line.ll5 + line.ll6 + line.ll7 + line.ll8 + line.lr1 + line.lr2 + line.lr3 + line.lr4 + line.lr5 + line.lr6 + line.lr7 + line.lr8
+                line.price_subtotal = line.price_unit

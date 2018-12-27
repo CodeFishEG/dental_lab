@@ -12,3 +12,4 @@ class SaleOrder(models.Model):
 
     # Patient Name For Sales Order
     patient_name = fields.Char('Patient Name')
+    internal_no = fields.Char('Internal Number')

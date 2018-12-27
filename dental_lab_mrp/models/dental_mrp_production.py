@@ -14,12 +14,13 @@ class MrpProduction(models.Model):
     sale_order_line_id = fields.Many2one('sale.order.line', string="Sale Order Line", compute="_compute_sale_order",
                                          store=True, translate=True)
     color = fields.Many2one('colors', related='sale_order_line_id.color', string="Color")
-    allt = fields.Boolean('case', related='sale_order_line_id.allt')
+    allt = fields.Selection('case', related='sale_order_line_id.allt')
     mrp_department = fields.Many2one('hr.department', string="Production Department",
                                      related='sale_order_line_id.mrp_department')
     user_id = fields.Many2one('res.users', string="Responsible", related='sale_order_line_id.production_employee')
     partner_id = fields.Many2one('res.partner', string="Customer", related='sale_order_id.partner_id')
     patient_name = fields.Char('Patient Name', related='sale_order_id.patient_name', store=True)
+    case_statues = fields.Selection('case_statues', related='sale_order_line_id.case_statues', string='Case Statues')
 
     # Upper Left Fields
     ul1 = fields.Boolean('1', related='sale_order_line_id.ul1')

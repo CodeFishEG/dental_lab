@@ -7,9 +7,13 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
 
-                <field name="partner_id" position="after">
+                <field name="partner_id" position="before">
+					<field name="internal_no"/>
+				</field>
+				<field name="partner_id" position="after">
 					<field name="patient_name"/>
 				</field>
+
 
 				<field name="order_line" position="attributes">
                     <attribute name="mode">kanban</attribute>
@@ -121,8 +125,10 @@
                 <xpath
                         expr="/form/sheet/notebook/page/field[@name='order_line']/form/group/group/field[@name='product_id']"
                        position="before">
-                    <field name="color"/>
+                    <field name="production_employee"/>
+					<field name="color"/>
                     <field name="allt"/>
+					<field name="case_statues"/>
                 </xpath>
 
                 <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/kanban" position="replace">
@@ -166,6 +172,7 @@
 						<field name="product_uom" groups="product.group_uom"/>
 						<field name="price_subtotal"/>
 						<field name="color"/>
+						<field name="case_statues"/>
 						<templates>
 							<t t-name="kanban-box">
 								<div t-attf-class="oe_kanban_card oe_kanban_global_click">
@@ -482,7 +489,9 @@
 											<span>
 												<t t-esc="record.product_uom_qty.value"/>
 												<t t-esc="record.product_uom.value"/>
-												<t t-esc="record.allt.string" attrs="{'invisible':[('allt', '!=', True)]}"/>
+												<t t-esc="record.case_statues.value"/>
+												<t t-esc="record.allt.value"/>
+
 											</span>
 										</div>
 										<div class="col-xs-4 text-muted">
