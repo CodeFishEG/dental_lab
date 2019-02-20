@@ -1,27 +1,45 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* dental_lab
+# 	* dental_lab
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0-20180704\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-07 19:53+0000\n"
-"PO-Revision-Date: 2018-07-07 19:53+0000\n"
+"POT-Creation-Date: 2018-12-27 00:20+0000\n"
+"PO-Revision-Date: 2018-12-27 02:23+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: ar_SY\n"
+"X-Generator: Poedit 2.2\n"
 
 #. module: dental_lab
-#: model:ir.model.fields,field_description:dental_lab.field_colors_code
-msgid "Code"
-msgstr "الكود"
+#: model:ir.ui.view,arch_db:dental_lab.report_quotation_inherit_demo
+msgid "<strong>Patient Name:</strong>"
+msgstr "<strong>إسم المريض</strong>"
+
+#. module: dental_lab
+#: model:ir.ui.view,arch_db:dental_lab.report_quotation_inherit_demo
+msgid "Case"
+msgstr "حاله"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_case_statues
+msgid "Case Statues"
+msgstr "حالة الحالة"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_allt
+msgid "Case Type"
+msgstr "نوع الحالة"
 
 #. module: dental_lab
 #: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_color
+#: model:ir.ui.view,arch_db:dental_lab.report_quotation_inherit_demo
 msgid "Color"
 msgstr "اللون"
 
@@ -53,9 +71,24 @@ msgid "Display Name"
 msgstr "اسم العرض"
 
 #. module: dental_lab
+#: selection:sale.order.line,allt:0
+msgid "Full Case"
+msgstr "حالة كاملة"
+
+#. module: dental_lab
+#: selection:sale.order.line,allt:0
+msgid "Half a Case"
+msgstr "نصف حالة"
+
+#. module: dental_lab
 #: model:ir.model.fields,field_description:dental_lab.field_colors_id
 msgid "ID"
 msgstr "المعرف"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_internal_no
+msgid "Internal Number"
+msgstr "الرقم الدفترى"
 
 #. module: dental_lab
 #: model:ir.model.fields,field_description:dental_lab.field_colors___last_update
@@ -73,9 +106,34 @@ msgid "Last Updated on"
 msgstr "آخر تحديث في"
 
 #. module: dental_lab
+#: selection:sale.order.line,case_statues:0
+msgid "New"
+msgstr "جديد"
+
+#. module: dental_lab
+#: selection:sale.order.line,allt:0
+msgid "Normal"
+msgstr "عادى"
+
+#. module: dental_lab
 #: model:ir.model.fields,field_description:dental_lab.field_sale_order_patient_name
 msgid "Patient Name"
 msgstr "إسم المريض"
+
+#. module: dental_lab
+#: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_production_employee
+msgid "Production Employee"
+msgstr "مسئول التصنيع"
+
+#. module: dental_lab
+#: selection:sale.order.line,case_statues:0
+msgid "Repair"
+msgstr "إصلاح"
+
+#. module: dental_lab
+#: selection:sale.order.line,case_statues:0
+msgid "Restoration"
+msgstr "إعادة"
 
 #. module: dental_lab
 #: model:ir.model,name:dental_lab.model_sale_order
@@ -92,8 +150,3 @@ msgstr "سطر أمر البيع"
 #: model:ir.model,name:dental_lab.model_colors
 msgid "colors"
 msgstr "الألوان"
-
-#. module: dental_lab
-#: model:ir.model.fields,field_description:dental_lab.field_sale_order_line_allt
-msgid "case"
-msgstr "حالة"
