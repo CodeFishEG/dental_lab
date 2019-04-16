@@ -1,6 +1,130 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
+		<record id="view_crm_form" model="ir.ui.view">
+			<field name="name">crm.lead.form.lead</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="patient_name"/>
+				</field>
+				<xpath expr="/form/sheet/notebook/page" position="before">
+					<page string="Data">
+
+					<group>
+					<table style="width: 100%; margin-left: auto; margin-right: auto;" dir="rtl" frame="box">
+						<tbody>
+							<tr>
+					    		<td style="width: 36px; text-align: center;"><strong>8</strong></td>
+						    	<td style="width: 36px; text-align: center;"><strong>7</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>6</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>5</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>4</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>3</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>2</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>1</strong></td>
+								<td style="width: 29px; text-align: center;">|</td>
+								<td style="width: 36px; text-align: center;"><strong>1</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>2</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>3</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>4</strong></td>
+								<td style="width: 36px; text-align: center;"><strong>5</strong></td>
+							    <td style="width: 36px; text-align: center;"><strong>6</strong></td>
+								<td style="width: 37px; text-align: center;"><strong>7</strong></td>
+								<td style="width: 37px; text-align: center;"><strong>8</strong></td>
+                            </tr>
+							<tr>
+							    <td style="width: 36px; text-align: center;"><field name="ul8"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul7"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul6"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul5"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul4"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul3"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul2"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ul1"/></td>
+								<td style="width: 29px; text-align: center;">|</td>
+								<td style="width: 36px; text-align: center;"><field name="ur1"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur2"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur3"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur4"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur5"/></td>
+								<td style="width: 36px; text-align: center;"><field name="ur6"/></td>
+								<td style="width: 37px; text-align: center;"><field name="ur7"/></td>
+								<td style="width: 37px; text-align: center;"><field name="ur8"/></td>
+                            </tr>
+							<tr>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 29px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 36px; text-align: center;"><hr /></td>
+                                <td style="width: 37px; text-align: center;"><hr /></td>
+                                <td style="width: 37px; text-align: center;"><hr /></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 36px; text-align: center;"><field name="ll8"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll7"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll6"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll5"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll4"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll3"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll2"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="ll1"/></td>
+                                <td style="width: 29px; text-align: center;">|</td>
+                                <td style="width: 36px; text-align: center;"><field name="lr1"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr2"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr3"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr4"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr5"/></td>
+                                <td style="width: 36px; text-align: center;"><field name="lr6"/></td>
+                                <td style="width: 37px; text-align: center;"><field name="lr7"/></td>
+                                <td style="width: 37px; text-align: center;"><field name="lr8"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 36px; text-align: center;"><strong>8</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>7</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>6</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>5</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>4</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>3</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>2</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>1</strong></td>
+                                <td style="width: 29px; text-align: center;">|</td>
+                                <td style="width: 36px; text-align: center;"><strong>1</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>2</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>3</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>4</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>5</strong></td>
+                                <td style="width: 36px; text-align: center;"><strong>6</strong></td>
+                                <td style="width: 37px; text-align: center;"><strong>7</strong></td>
+                                <td style="width: 37px; text-align: center;"><strong>8</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+						</group>
+					<group>
+					<field name="case_statues"/>
+						<field name="product_id" domain="[('sale_ok','=',True)]"/>
+						<field name="d_color"/>
+						<field name="antagonist"/>
+						<field name="bite"/>
+					</group>
+					</page>
+
+				</xpath>
+			</field>
+		</record>
 		<record id="view_order_tree" model="ir.ui.view">
 			<field name="name">sale.order.tree</field>
 			<field name="model">sale.order</field>
