@@ -39,6 +39,6 @@
     "images": [
         'static/description/banner.png'
     ],
-    'price': 10.00,
+    'price': 1.00,
     'currency': 'EUR',
 }
